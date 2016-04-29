@@ -12,10 +12,10 @@
 
 case $1 in
         start)
-                python /home/pi/CheckIp/app.js
+                octoprint & python /home/pi/checkip/app.py
                 ;;
         stop)
-                kill $(ps aux | grep -m 1 'python /home/pi/CheckIp/app.js' | awk '{ print $2 }')
+                kill $(ps aux | grep -m 1 'python /home/pi/checkip/app.py' | awk '{ print $2 }')
 				;;
         *)
                 echo "Usage: $0 (start|stop)"
