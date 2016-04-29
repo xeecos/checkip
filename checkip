@@ -12,7 +12,7 @@
 
 case $1 in
         start)
-                octoprint & python /home/pi/checkip/app.py
+                su pi -c 'octoprint & python /home/pi/checkip/app.py'
                 ;;
         stop)
                 kill $(ps aux | grep -m 1 'python /home/pi/checkip/app.py' | awk '{ print $2 }')
